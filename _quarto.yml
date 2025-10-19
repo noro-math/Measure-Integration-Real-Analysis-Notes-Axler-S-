@@ -1,0 +1,37 @@
+project:
+  type: book
+  output-dir: _book
+
+book:
+  title: "Measure, Integration & Real Analysis (Sheldon Axler) - Notes"
+  author: "Phong Nguyen"
+  reader-mode: true
+
+  page-footer:
+    left: |
+      Measure, Integration & Real Analysis (Sheldon Axler) - Notes 
+      are written by Phong Nguyen and Trung Tran
+    right: |
+      This book was built with <a href="https://quarto.org/">Quarto</a>.
+  repo-url: https://github.com/noro-math/Measure-Integration-Real-Analysis-Notes-Axler-S-.git
+
+  chapters:
+    - index.qmd
+    - intro.qmd
+
+    - part: Supplement.qmd
+      chapters:
+        - Oct5.qmd
+  
+
+bibliography: references.bib
+
+format:
+  html:
+    theme:
+      - cosmo
+      - brand
+
+
+
+
