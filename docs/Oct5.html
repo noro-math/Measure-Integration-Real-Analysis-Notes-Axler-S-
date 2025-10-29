@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.24">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Phong Nguyen">
+<meta name="dcterms.date" content="2025-10-05">
+
+<title>Sept-Oct Math Notes - Real Analysis</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-e31584831b205ffbb2d98406f31c2a5b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="fullcontent quarto-light">
+
+<div id="quarto-search-results"></div>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Sept-Oct Math Notes - Real Analysis</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Phong Nguyen </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">October 5, 2025</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introduction" class="level1">
+<h1>INTRODUCTION</h1>
+<p>The following are notes for Supplement for the textbook <em>Measure, Integration &amp; Real Analysis</em> by Sheldon Axler.</p>
+<p>This week’s notes go over <strong>Section A - Complete Ordered Field</strong></p>
+</section>
+<section id="definition" class="level1">
+<h1>1 Definition</h1>
+<p>A <em>field</em> is a set <span class="math inline">\(\mathbb{F}\)</span> along with operations of addition and multiplication on F that have the following properties (Alex, S):</p>
+<ul>
+<li><p><strong>commutativity</strong>: <span class="math inline">\(a+b = b+a\)</span> and <span class="math inline">\(ab = ba\forall a,b \in\mathbb{F}\)</span></p></li>
+<li><p><strong>associativity</strong>: <span class="math inline">\((a+b)+c = a+(b+c)\)</span> and <span class="math inline">\((ab)c = a(bc)\forall a,b,c \in \mathbb{F}\)</span></p></li>
+<li><p><strong>distributive property</strong>: <span class="math inline">\(a(b+c) = ab + ac,\thinspace \forall a,b \in \mathbb{F}\)</span></p></li>
+<li><p><strong>additive identity</strong>: There exists an element 0 <span class="math inline">\(\in F\)</span> such that <span class="math inline">\(a+0=a, \thinspace \forall a \in \mathbb{F}\)</span></p></li>
+<li><p><strong>additive inverse</strong>: <span class="math inline">\(\forall a \in \mathbb{f}\)</span>, there exists an element <span class="math inline">\(-a \in \mathbb{F}\)</span> such that <span class="math inline">\(a+(-a)=0.\)</span></p></li>
+<li><p><strong>multiplication identity:</strong> There exists an element <span class="math inline">\(1 \in \mathbb{F}\)</span> such that <span class="math inline">\(1 \neq 0\)</span> and <span class="math inline">\(a1=a, \thinspace \forall a \in \mathbb{F}.\)</span></p></li>
+<li><p><strong>multiplication inverse:</strong> <span class="math inline">\(\forall a \in \mathbb{F}\)</span> with <span class="math inline">\(a \neq 0\)</span>, there exists an element <span class="math inline">\(a^{-1} \in \mathbb{F}\)</span> such that <span class="math inline">\(aa^{-1}=1.\)</span></p></li>
+</ul>
+<p><strong><em>0.3 properties of the additive inverse in a field</em></strong></p>
+<ol type="a">
+<li>for each <span class="math inline">\(a \in \mathbb{F},\thinspace\)</span> the additive inverse of <span class="math inline">\(a\)</span> is unique (thus the notation <span class="math inline">\(-a\)</span> makese sense)</li>
+<li><span class="math inline">\(-(-a) = a\)</span> for each <span class="math inline">\(a \in \mathbb{F}\)</span></li>
+<li><span class="math inline">\((-1)a = -a, \thinspace \forall a \in \mathbb{F}\)</span></li>
+</ol>
+<p><strong><em>Proof (0.3)</em></strong></p>
+<p><strong><em>Part (a)</em></strong> We have the additive inverse property: <span class="math display">\[a + (-a) = 0\]</span> Suppose there exists an additive inverse of <span class="math inline">\(a = b, \thinspace b \neq -a. \thinspace\)</span> We have: <span class="math display">\[a + b = 0\]</span> Add LHS and RHS by <span class="math inline">\((-a)\)</span>: <span class="math display">\[a+b + -a = -a\]</span> Using additive property of <span class="math inline">\(a +(-a) = 0\)</span>: <span class="math display">\[0 + b = -a\]</span> <span class="math display">\[\rightarrow b = -a\]</span> Impossible since <span class="math inline">\(b\neq (-a). \thinspace\)</span> So additive inverse of <span class="math inline">\(a = -a\)</span> is unique.</p>
+<p><strong><em>Part (b)</em></strong> We have the additive inverse property: <span class="math display">\[a + (-a) = 0\]</span> Subtract LHS and RHS by (-a): <span class="math display">\[ a + (-a) - (-a) = 0 - (-a)\]</span> <span class="math display">\[ a = -(-a)\]</span></p>
+<p><strong><em>Part (c)</em></strong> We have 1 and the additive inverse of 1 = (-1) (Additive Inverse property) We have: <span class="math display">\[1 + (-1) = 0\]</span> Multiply LHS and RHS by a:<span class="math display">\[a1 + (-1)a = 0a\]</span> Using multiplication identity <span class="math inline">\(a1 = a\)</span> and <span class="math inline">\(a0 = 0\)</span>: <span class="math display">\[a +(-1)a = 0\]</span> <span class="math display">\[\rightarrow (-1)a = -a\]</span></p>
+<p><strong><em>analogous properties of the multiplication inverse</em></strong></p>
+<ol type="a">
+<li>for each <span class="math inline">\(a \in \mathbb{F},\thinspace\)</span> the multiplication inverse of <span class="math inline">\(a\)</span> is unique (thus the notation <span class="math inline">\(a^{-1}\)</span> makese sense)</li>
+<li><span class="math inline">\((a^{-1})^{-1} = a\)</span> for each <span class="math inline">\(a \in \mathbb{F}\)</span></li>
+<li><span class="math inline">\(1 : a = a^{-1}, \thinspace \forall a \in \mathbb{F}\)</span></li>
+</ol>
+<p><strong><em>Part (a)</em></strong> We have the multiplication inverse property <span class="math inline">\(aa^{-1} = 1\)</span> Suppose there exists a multiplication inverse of <span class="math inline">\(a=b, b \neq a^{-1}\)</span>. We have <span class="math display">\[ab = 1\]</span> <span class="math display">\[\rightarrow ab = aa^{-1}\]</span> Divide LHS and RHS by a: <span class="math display">\[b=a^{-1}\]</span> Impossible since <span class="math inline">\(b \neq a^{-1}\)</span>. So the multiplication inverse of any <span class="math inline">\(a\)</span> is unique.</p>
+<p><strong><em>Part (b)</em></strong> We have the multiplication inverse property: <span class="math display">\[aa^{-1} = 1\]</span> Raise LHS and RHS to <span class="math inline">\(-1\)</span> <span class="math inline">\(a\)</span>: <span class="math display">\[(aa^{-1})^{-1} = 1^{-1}\]</span> <span class="math display">\[\rightarrow a^{-1}(a^{-1})^{-1} = 1\]</span> Using multiplication inverse property: <span class="math display">\[a^{-1}(a^{1})^{-1} = aa^{-1}\]</span> Divide LHS and RHS by <span class="math inline">\(a^{-1}\)</span>: <span class="math display">\[(a^{-1})^{-1} = a\]</span></p>
+<p><strong><em>Part (c)</em></strong> We have the multiplication inverse property: <span class="math display">\[aa^{-1} = 1\]</span> We have: <span class="math display">\[a^{-1} = a^{-1}\]</span> <span class="math display">\[a^{-1}1 = a^{-1}\]</span> Using multiplication inverse property: <span class="math display">\[a^{-1}(aa^{-1}) = a^{-1}\]</span> Using associativity property: <span class="math display">\[(a^{-1}a)a^{-1} = a^{-1}\]</span> We have <span class="math inline">\((aa^{-1}) = (a/a) = a\)</span> <span class="math display">\[\Rightarrow (a/a)a^{-1} = a^{-1}\]</span> <span class="math display">\[(aa^{-1})/a=a^{-1}\]</span> <span class="math display">\[\rightarrow 1/a=a^{-1}\]</span>.</p>
+<p><strong><em>3</em></strong> Suppose $ is a field and <span class="math inline">\(a,b \in \mathbb{F}\)</span>. Prove that <span class="math inline">\((-a)(-b)=ab\)</span>.</p>
+<p><strong><em>Proof</em></strong> We have the additive inverse property: <span class="math display">\[a+(-a)=0\]</span> Multiply LHS and RHS by b: <span class="math display">\[(a+(-a))b=0b\]</span> <span class="math display">\[ab+(-a)b=0\]</span> <span class="math display">\[ab = -(-a)b\]</span> <span class="math display">\[\rightarrow ab = (-a)(-b)\]</span></p>
+<p><strong><em>4</em></strong> Suppose <span class="math inline">\(\mathbb{F}\)</span> is a field and <span class="math inline">\(a,b,c \in \mathbb{F}\)</span> with <span class="math inline">\(b \neq 0\)</span> and <span class="math inline">\(c \neq 0\)</span>. Prove that <span class="math display">\[\frac{ac}{bc} = \frac{a}{b}\]</span></p>
+<p><strong><em>Proof</em></strong> We have: <span class="math display">\[\frac{ac}{bc} = (ac)(bc)^{-1} = ac(b^{-1})(c^{-1})\]</span> <span class="math display">\[\rightarrow \frac{ac}{bc} = a(c^{1}c^{-1})b^{-1}\]</span> <span class="math display">\[\rightarrow \frac{ac}{bc} = a1\frac{1}b = \frac{a}{b}\]</span></p>
+<p><strong><em>5</em></strong> Suppose <span class="math inline">\(\mathbb{F}\)</span> is a field and <span class="math inline">\(a,b,c \in \mathbb{F}\)</span> with <span class="math inline">\(b \neq 0\)</span> and <span class="math inline">\(c \neq 0\)</span>. Prove that <span class="math display">\[\frac{a}{b}-\frac{c}{d}=\frac{ad-bc}{bd}\]</span></p>
+<p><strong><em>Proof</em></strong> We have: <span class="math display">\[\frac{a}{b}-\frac{c}{d} = ab^{-1} - cd^{-1}\]</span> Using multiplication identity <span class="math inline">\(a1 = a\)</span>: <span class="math display">\[\rightarrow \frac{a}{b}-\frac{c}{d} = ab^{-1}1 - cd^{-1}1 \]</span> Using multiplication inverse property with <span class="math inline">\(dd^{-1}\)</span> and <span class="math inline">\(bb^{-1}\)</span> <span class="math display">\[\frac{a}{b}-\frac{c}{d} = ab^{-1}dd^{-1} - cd^{-1}bb^{-1}\]</span> <span class="math display">\[\frac{a}{b}-\frac{c}{d} = (b^{-1}d^{-1})(ad - cb)\]</span> <span class="math display">\[\frac{a}{b}-\frac{c}{d} = (ad-cb)(bd)^{-1} = \frac{ad-cb}{bd}.\]</span></p>
+<p>Block math:<br>
+<span class="math display">\[
+\int_0^\infty e^{-x^2} \, dx = \frac{\sqrt{\pi}}{2}
+\]</span></p>
+<p>&lt;Aligned steps:<br>
+<span class="math display">\[
+\begin{align}
+f(x) &amp;= x^2 + 2x + 1 \\
+     &amp;= (x+1)^2
+\end{align}
+\]</span>&gt;</p>
+<p><strong><em>6</em></strong> Suppose <span class="math inline">\(\mathbb{F}\)</span> is a field and <span class="math inline">\(a,b,c,d \in \mathbb{F}\)</span> with <span class="math inline">\(b \neq 0\)</span> <span class="math inline">\(c \neq 0\)</span>, and <span class="math inline">\(d \neq 0\)</span>. Prove that <span class="math display">\[\frac{a}{b} \div \frac{c}{d} = \frac{ad}{bc}\]</span> <strong><em>Proof</em></strong> We have: <span class="math display">\[\frac{a}{b} \div \frac{c}{d} = ab^{-1}(cd^{-1})^{-1} = ab^{-1}c^{-1}d\]</span> Using associativity property: <span class="math display">\[ab(c^{-1}d^{-1}) = ad(cd)^{-1} = \frac{ad}{cd}\]</span></p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
