@@ -1,5 +1,5 @@
 ---
-title: "Sept-Oct Math Notes - Real Analysis"
+title: "Oct 5 Notes"
 author: "Phong Nguyen"
 date: "Oct 5 2025"
 format: html

@@ -14,14 +14,15 @@ book:
     right: |
       This book was built with <a href="https://quarto.org/">Quarto</a>.
   repo-url: https://github.com/noro-math/Measure-Integration-Real-Analysis-Notes-Axler-S-.git
+  repo-branch: master
+  repo-actions: [edit,issue]
 
   chapters:
     - index.qmd
-    - intro.qmd
-
-    - part: Supplement.qmd
+    - part: "Supplement"
       chapters:
         - Oct5.qmd
+        - Oct29.qmd
   
 
 bibliography: references.bib

@@ -1,0 +1,40 @@
+---
+title: "Oct 29 Notes"
+author: "Phong Nguyen"
+date: "Oct 29 2025"
+format: html
+---
+
+# Ordered Field (Axler, S)
+An *ordered field* is a field $\mathbb{F}$ with a subset $\mathbb{P}$ of $\mathbb{F}$, called the *positive* subset, with the following properties:
+
++ If $a \in \mathbb{F}$ or $a = 0$ or $-a \in \mathbb{P}$
+
++ If $a \in \mathbb{P}$, then $-a \notin \mathbb{P}$.
+
++ If $a,b \in \mathbb{P}$, then $a+b \in \mathbb{P}$ and $ab \in \mathbb{P}$
+
+**The positive subset is closed under multiplicative inverse**: Suppose $\mathbb{F}$ is an ordered field with positive subset $\mathbb{P}$. Then
+
++ $1 \in \mathbb{P}$
+
++ $a^{-1} \in \mathbb{P}$  $\forall a \in \mathbb{P}$
+
+***Proof** (Axler, S) 
+To prove (a), note that the definition of an ordered field implie that either $1 \in \mathbb{P}$ or $-1 \in \mathbb{P}$. <br />
+If $1 \in \mathbb{P}$, then we are done. <br />
+If $-1 \in \mathbb{P}$, then $1 = (-1)(-1) \in \mathbb{P}$ (because $\mathbb{P}$ is closed under multiplication). Either way, the proof is completed.<br />
+
+To prove (b), suppose $a \in \mathbb{P}$. If we had $-a^{-1} \in \mathbb{P}$, then we would have $-1 = (-a^{-1})a \in \mathbb{P}$ (because $\mathbb{P}$ is closed under multiplication), which contradicts the second bullet point of **4**. Thus $a^{-1} \in \mathbb{P} \forall a \in \mathbb{P}$, as desired.
+
+# Less than; greater than
+
+Suppose $\mathbb{F}$ is an ordered field with positive subset $\mathbb{P}$. Suppose $a,b \in \mathbb{F}$. Then:
+
++ $a < b$ is defined to mean $ b - a \in \mathbb{P}$
+
++ $a \le b$ is defined to mean $a < b$ or  $a = b$;
+
++ $a > b$ is defined to mean $b > a$;
+
++ $a \ge b$ is defined to mean $a>b$ or $a = b$

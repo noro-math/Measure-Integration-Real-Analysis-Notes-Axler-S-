@@ -7,8 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Phong Nguyen">
+<meta name="dcterms.date" content="2025-10-29">
 
-<title>Measure, Integration &amp; Real Analysis (Sheldon Axler) - Notes</title>
+<title>2&nbsp; Oct 29 Notes – Measure, Integration &amp; Real Analysis (Sheldon Axler) - Notes</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,7 +32,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./intro.html" rel="next">
+<link href="./Oct5.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -71,6 +72,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -83,7 +113,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Preface</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Oct5.html">Supplement</a></li><li class="breadcrumb-item"><a href="./Oct29.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Oct 29 Notes</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -120,19 +150,13 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Preface</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./Supplement.html" class="sidebar-item-text sidebar-link">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
  <span class="menu-text">Supplement</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -142,13 +166,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Oct5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Oct 5 Notes</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Oct 5 Notes</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Oct29.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Oct 29 Notes</span></span></a>
+  <a href="./Oct29.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Oct 29 Notes</span></span></a>
   </div>
 </li>
       </ul>
@@ -163,16 +187,17 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#preface" id="toc-preface" class="nav-link active" data-scroll-target="#preface">Preface</a></li>
+  <li><a href="#ordered-field-axler-s" id="toc-ordered-field-axler-s" class="nav-link active" data-scroll-target="#ordered-field-axler-s"><span class="header-section-number">3</span> Ordered Field (Axler, S)</a></li>
+  <li><a href="#less-than-greater-than" id="toc-less-than-greater-than" class="nav-link" data-scroll-target="#less-than-greater-than"><span class="header-section-number">4</span> Less than; greater than</a></li>
   </ul>
-</nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/noro-math/Measure-Integration-Real-Analysis-Notes-Axler-S-.git/edit/master/Oct29.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/noro-math/Measure-Integration-Real-Analysis-Notes-Axler-S-.git/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Oct5.html">Supplement</a></li><li class="breadcrumb-item"><a href="./Oct29.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Oct 29 Notes</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Measure, Integration &amp; Real Analysis (Sheldon Axler) - Notes</h1>
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Oct 29 Notes</span></h1>
 </div>
 
 
@@ -186,6 +211,12 @@ ul.task-list li input[type="checkbox"] {
           </div>
   </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">October 29, 2025</p>
+    </div>
+  </div>
   
     
   </div>
@@ -195,9 +226,31 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="preface" class="level1 unnumbered">
-<h1 class="unnumbered">Preface</h1>
-<p>Hello hilo holo haha</p>
+<section id="ordered-field-axler-s" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Ordered Field (Axler, S)</h1>
+<p>An <em>ordered field</em> is a field <span class="math inline">\(\mathbb{F}\)</span> with a subset <span class="math inline">\(\mathbb{P}\)</span> of <span class="math inline">\(\mathbb{F}\)</span>, called the <em>positive</em> subset, with the following properties:</p>
+<ul>
+<li><p>If <span class="math inline">\(a \in \mathbb{F}\)</span> or <span class="math inline">\(a = 0\)</span> or <span class="math inline">\(-a \in \mathbb{P}\)</span></p></li>
+<li><p>If <span class="math inline">\(a \in \mathbb{P}\)</span>, then <span class="math inline">\(-a \notin \mathbb{P}\)</span>.</p></li>
+<li><p>If <span class="math inline">\(a,b \in \mathbb{P}\)</span>, then <span class="math inline">\(a+b \in \mathbb{P}\)</span> and <span class="math inline">\(ab \in \mathbb{P}\)</span></p></li>
+</ul>
+<p><strong>The positive subset is closed under multiplicative inverse</strong>: Suppose <span class="math inline">\(\mathbb{F}\)</span> is an ordered field with positive subset <span class="math inline">\(\mathbb{P}\)</span>. Then</p>
+<ul>
+<li><p><span class="math inline">\(1 \in \mathbb{P}\)</span></p></li>
+<li><p><span class="math inline">\(a^{-1} \in \mathbb{P}\)</span> <span class="math inline">\(\forall a \in \mathbb{P}\)</span></p></li>
+</ul>
+<p>*<strong>Proof</strong> (Axler, S) To prove (a), note that the definition of an ordered field implie that either <span class="math inline">\(1 \in \mathbb{P}\)</span> or <span class="math inline">\(-1 \in \mathbb{P}\)</span>. <br> If <span class="math inline">\(1 \in \mathbb{P}\)</span>, then we are done. <br> If <span class="math inline">\(-1 \in \mathbb{P}\)</span>, then <span class="math inline">\(1 = (-1)(-1) \in \mathbb{P}\)</span> (because <span class="math inline">\(\mathbb{P}\)</span> is closed under multiplication). Either way, the proof is completed.<br></p>
+<p>To prove (b), suppose <span class="math inline">\(a \in \mathbb{P}\)</span>. If we had <span class="math inline">\(-a^{-1} \in \mathbb{P}\)</span>, then we would have <span class="math inline">\(-1 = (-a^{-1})a \in \mathbb{P}\)</span> (because <span class="math inline">\(\mathbb{P}\)</span> is closed under multiplication), which contradicts the second bullet point of <strong>4</strong>. Thus <span class="math inline">\(a^{-1} \in \mathbb{P} \forall a \in \mathbb{P}\)</span>, as desired.</p>
+</section>
+<section id="less-than-greater-than" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Less than; greater than</h1>
+<p>Suppose <span class="math inline">\(\mathbb{F}\)</span> is an ordered field with positive subset <span class="math inline">\(\mathbb{P}\)</span>. Suppose <span class="math inline">\(a,b \in \mathbb{F}\)</span>. Then:</p>
+<ul>
+<li><p><span class="math inline">\(a &lt; b\)</span> is defined to mean $ b - a $</p></li>
+<li><p><span class="math inline">\(a \le b\)</span> is defined to mean <span class="math inline">\(a &lt; b\)</span> or <span class="math inline">\(a = b\)</span>;</p></li>
+<li><p><span class="math inline">\(a &gt; b\)</span> is defined to mean <span class="math inline">\(b &gt; a\)</span>;</p></li>
+<li><p><span class="math inline">\(a \ge b\)</span> is defined to mean <span class="math inline">\(a&gt;b\)</span> or <span class="math inline">\(a = b\)</span></p></li>
+</ul>
 
 
 </section>
@@ -605,11 +658,11 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./Oct5.html" class="pagination-link" aria-label="Oct 5 Notes">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Oct 5 Notes</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./intro.html" class="pagination-link" aria-label="Introduction">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
@@ -620,7 +673,7 @@ ul.task-list li input[type="checkbox"] {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    </div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/noro-math/Measure-Integration-Real-Analysis-Notes-Axler-S-.git/edit/master/Oct29.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/noro-math/Measure-Integration-Real-Analysis-Notes-Axler-S-.git/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This book was built with <a href="https://quarto.org/">Quarto</a>.</p>
 </div>
