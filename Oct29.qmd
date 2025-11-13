@@ -1,11 +1,10 @@
 ---
 title: "Oct 29 Notes"
-author: "Phong Nguyen"
 date: "Oct 29 2025"
 format: html
 ---
 
-# Ordered Field (Axler, S)
+## Ordered Field (Axler, S)
 An *ordered field* is a field $\mathbb{F}$ with a subset $\mathbb{P}$ of $\mathbb{F}$, called the *positive* subset, with the following properties:
 
 + If $a \in \mathbb{F}$ or $a = 0$ or $-a \in \mathbb{P}$
@@ -14,20 +13,23 @@ An *ordered field* is a field $\mathbb{F}$ with a subset $\mathbb{P}$ of $\mathb
 
 + If $a,b \in \mathbb{P}$, then $a+b \in \mathbb{P}$ and $ab \in \mathbb{P}$
 
+:::{.callout-note appearance="minimal"}
 **The positive subset is closed under multiplicative inverse**: Suppose $\mathbb{F}$ is an ordered field with positive subset $\mathbb{P}$. Then
 
 + $1 \in \mathbb{P}$
 
 + $a^{-1} \in \mathbb{P}$  $\forall a \in \mathbb{P}$
+:::
 
-***Proof** (Axler, S) 
+:::{.callout-note appearance="default" title="Proof (Axler, S)" collapse=true icon=false}
 To prove (a), note that the definition of an ordered field implie that either $1 \in \mathbb{P}$ or $-1 \in \mathbb{P}$. <br />
 If $1 \in \mathbb{P}$, then we are done. <br />
 If $-1 \in \mathbb{P}$, then $1 = (-1)(-1) \in \mathbb{P}$ (because $\mathbb{P}$ is closed under multiplication). Either way, the proof is completed.<br />
 
 To prove (b), suppose $a \in \mathbb{P}$. If we had $-a^{-1} \in \mathbb{P}$, then we would have $-1 = (-a^{-1})a \in \mathbb{P}$ (because $\mathbb{P}$ is closed under multiplication), which contradicts the second bullet point of **4**. Thus $a^{-1} \in \mathbb{P} \forall a \in \mathbb{P}$, as desired.
+:::
 
-# Less than; greater than
+## Less than; greater than
 
 Suppose $\mathbb{F}$ is an ordered field with positive subset $\mathbb{P}$. Suppose $a,b \in \mathbb{F}$. Then:
 
@@ -38,3 +40,37 @@ Suppose $\mathbb{F}$ is an ordered field with positive subset $\mathbb{P}$. Supp
 + $a > b$ is defined to mean $b > a$;
 
 + $a \ge b$ is defined to mean $a>b$ or $a = b$
+
+## Transitity
+Suppose $\mathbb{F}$ is an ordered field and $a,b,c \in \mathbb{F}$. If $a<b$ and $b<c$, then $a<c$.
+**Proof (Axler, S)**
+Suppose $a<b$ and $b<c$. Hence $c-b \in \mathbb{P}$ and $b-a \in \mathbb{P}$. Because $\mathbb{P}$ is closed under addition, we conclude that 
+$c-a = (c-b)+(b-a) \in \mathbb{P}$
+Thus  $a<c$, as desired.
+
+## Absolute value
+Suppose $\mathbb{F}$ is an ordered field and $b \in \mathbb{F}$. The *absolute value* of $b$, denoted $|b|$, is defined by
+$$
+|b| = 
+\begin{cases}
+b, & \text{if } b \ge 0. \\
+-b, & \text{if } b < 0.
+\end{cases}
+$$
+
+:::{.callout-note appearance="minimal"}
+Suppose $\mathbf{F}$ is an ordered field. Prove that there does not exist $i \in \mathbf{F}$ such that $i^2 = −1$. (Thus the set of complex numbers, with its usual operation of multiplication, cannot be made into an ordered field.)
+:::
+
+:::{.callout-note appearance="default" title="Proof" collapse=true icon=false}
+Since $\mathbf{F}$ is an ordered field, by Definition 0.5, it must be true that there is a positive subset $P \subseteq \mathbf{F}$ and any $a\in \mathbf{F}$ must imply $a\in P$, $a=0$, or $-a\in P$. Suppose that there exists $i \in \mathbf{F}$ such that $i^2 = −1$. 
+
+If $i \in P$, then it must be true that $i\cdot i \in P$, by Definition 0.5. This is a contradition since $-1 \not \in P$. Hence, $i \not\in P$.
+
+If $i = 0$, then it must be true that $i\cdot i = 0 \neq -1$. This is a contradition, leading to $i \neq 0$.
+
+If $-i \in P$, then it must be true that $i\cdot i = (-1)(-1)i^2 = (-i)^2 \in P$, by Definition 0.5. This is a contradition, leading to $-i \not\in P$.
+
+Hence, by contradiction, there must not exist $i \in \mathbf{F}$ such that $i^2 = −1$.
+:::
+

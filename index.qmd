@@ -1,4 +1,7 @@
-# Preface {.unnumbered}
+# Introduction {.unnumbered}
 
-Hello hilo holo
-haha
+This Quarto Book is a set of Notes and Exercises summarized from *Measure, Integration & Real Analysis* by Sheldon Axler.
+
+This was written for future students interested in learning the subject of Measure Theory. It is best advised, just as Sheldon Axler himself said in the book, to do the proof exercises yourself before looking at the provided proofs.
+
+If interested, you can find more Professor Sheldon Axler's books on Measure Theory [here](https://measure.axler.net/).

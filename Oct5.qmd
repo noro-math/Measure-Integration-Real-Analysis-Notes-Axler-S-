@@ -1,18 +1,19 @@
 ---
-title: "Oct 5 Notes"
 author: "Phong Nguyen"
 date: "Oct 5 2025"
 format: html
 ---
 
-# INTRODUCTION
+# Sep - Oct 5 Notes
+
+## INTRODUCTION
 
 The following are notes for Supplement for the textbook *Measure, Integration & Real Analysis* by Sheldon Axler.
 
 This week's notes go over **Section A - Complete Ordered Field**
 
 
-# 1 Definition
+## Definition
 
 A *field* is a set $\mathbb{F}$ along with operations of addition and multiplication on F that have the following properties (Alex, S):
 

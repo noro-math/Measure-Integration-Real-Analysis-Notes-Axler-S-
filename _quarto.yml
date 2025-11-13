@@ -4,7 +4,6 @@ project:
 
 book:
   title: "Measure, Integration & Real Analysis (Sheldon Axler) - Notes"
-  author: "Phong Nguyen"
   reader-mode: true
 
   page-footer:
@@ -19,7 +18,8 @@ book:
 
   chapters:
     - index.qmd
-    - part: "Supplement"
+    
+    - part: Supplement.qmd
       chapters:
         - Oct5.qmd
         - Oct29.qmd
